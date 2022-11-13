@@ -1,1 +1,1 @@
-# DAC Project: Chatbot AI - Sign in/Sign up page
+# DAC Project: Chatbot AI - Sign in/Sign up UI
