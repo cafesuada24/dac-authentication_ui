@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <title>Authentication</title>
+</head>
+<body>
+  <!-- Login modal -->
+  <div class="modal" id="modal-login">
+    <h1 class="modal-heading">login</h1>
+    <p class="modal-desc">Login here using your username and password</p>
+    <p class="modal-error_text modal-desc" id="login-error">Incorrect username or password!</p>
+    <div class="modal-container" id="container-login">
+      <form method="post" action="" class="modal-form" id="login-form">
+        <label>Username
+          <input class="modal-input" name="username" placeholder="@Username" required>
+        </label>
+        <label>Password
+          <input class="modal-input" name="password" placeholder="Password" required>
+          <a class="modal-link" href="#">Forgot password?</a>
+        </label>
+        <label><input class="modal-checkbox" name="remember-user" type="checkbox" value="checked"> <span class="modal-checkbox_text">Remember me</span></label>
+      </form>
+      <button form="login-form" class="modal-button">login</button>
+      <p class="modal-desc">Not a member? <a href="#" class="modal-link">Sign up now</a></p>
+    </div>
+  </div>
+
+  <!--  Forgot password modal -->
+  <div class="modal" id="modal-forgot_pwd">
+    <h1 class="modal-heading">forgot password</h1>
+    <p class="modal-desc">No worries!</p>
+    <p class="modal-error_text modal-desc" id="forgot-error">We couldn't recognize the email</p>
+    <div class="modal-container" id="container-forgot">
+      <form method="post" action="#" class="modal-form" id="forgot-form">
+        <p class="modal-desc">Enter your email and we will send you a reset</p>
+        <input type="email" placeholder="@email" name="email" class="modal-input" required>
+      </form>
+      <button class="modal-button" form="forgot-form">send request</button>
+      <p class="modal-desc">Back to <a class="modal-link" href="#">Sign in</a> page</p>
+    </div>
+  </div>
+
+  <!-- Mail sent modal-->
+  <div class="modal" id="modal-mail_sent">
+    <h1 class="modal-heading">check your email</h1><br><br>
+    <p class="modal-desc">We have sent a password recover <br><br> instructions to your email</p>
+  </div>
+
+  <!-- Reset password modal -->
+  <div class="modal" id="modal-reset_pwd">
+    <h1 class="modal-heading">create new password</h1>
+    <p class="modal-desc">New password must be different from <br> previous used passwords!</p>
+    <p class="modal-error_text modal-desc" id="reset-error">Mismatching password!</p>
+    <div class="modal-container" id="container-reset">
+      <form class="modal-form" method="post">
+        <label>New password
+          <input class="modal-input" type="password" name="new-pwd" placeholder="New password" required>
+        </label>
+        <label>Confirm password
+          <input class="modal-input" type="password" name="new-pwd-cfm" placeholder="Confirm password" required>
+        </label>
+      </form>
+      <button class="modal-button">reset</button>
+    </div>
+  </div>
+
+  <!-- Password updated modal -->
+  <div class="modal" id="modal-pwd_updated">
+    <h1 class="modal-heading">Password updated</h1>
+    <p class="modal-desc"><i style="opacity: 0.8">Your password has been successfully updated!</i></p>
+    <div class="modal-container">
+      <button class="modal-button">Login</button>
+    </div>
+  </div>
+
+  <!-- Register modal -->
+  <div class="modal" id="modal-register">
+    <h1 class="modal-heading">create new account</h1>
+    <p class="modal-error_text modal-desc" id="regist-error-pwd_week">Too week password!</p>
+    <p class="modal-error_text modal-desc" id="regist-error-pwd_mmc">Mismatching password!</p>
+    <p class="modal-error_text modal-desc" id="regist-error-mail">We couldn't recognise the email!</p>
+    <div class="modal-container" id="container-register">
+      <form method="post" action="#" class="modal-form">
+        <label >Your email
+          <input class="modal-input" type="email" name="email" placeholder="@email" required>
+        </label>
+        <label >Your password
+          <input class="modal-input" type="email" name="password" placeholder="Password" required>
+          <span style="opacity: 0.5; font-size: 10px"><i>Must be at least 8 characters with one uppercase, one lowercase, one number and special character</i></span>
+        </label>
+        <label >Confirm password
+          <input class="modal-input" type="email" name="password-cfm" placeholder="Confirm password" required>
+        </label>
+      </form>
+      <button class="modal-button">Sign up</button>
+      <p class="modal-desc">Already have an account? <a href="#" class="modal-link">Sign in now</a></p>
+    </div>
+  </div>\
+
+  <!-- Register successfully modal-->
+  <div class="modal" id="modal-register-succ">
+    <img src="./images/check.jpg" alt="Check"><br><br>
+    <hr class="divider">
+    <h1 class="modal-heading">success</h1>
+    <div class="modal-container">
+      <button class="modal-button">login</button>
+    </div>
+  </div>
+</body>
+</html>
