@@ -26,6 +26,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 4%;
+  display: none;
+  padding: 15px 0;
+  animation: modal-appear 0.3s;
 }
 
 .modal-heading, .modal-desc {
@@ -92,13 +95,13 @@ body {
 
 .modal-error_text {
   color: #F50808;
-
+  display: none;
 }
 
 /* Login modal */
 #modal-login {
-  height: 550px;
-  display: none;
+  height: 565px;
+  display: block;
 }
 
 #container-login {
@@ -115,7 +118,7 @@ body {
 #modal-forgot_pwd {
   height: 435px;
   padding: 15px 0;
-  display: none;
+ 
 }
 
 #container-forgot {
@@ -125,14 +128,13 @@ body {
 /* Mail sent modal*/
 #modal-mail_sent {
   padding: 80px 64px;
-  display: none;
+  
 }
 
 /* Reset password modal*/
 #modal-reset_pwd {
-  height: 455px;
-  padding: 15px 0;
-  display: none;
+  height: 480px;
+ 
 }
 
 #container-reset {
@@ -141,16 +143,6 @@ body {
 
 /* Password updated modal*/
 
-#modal-pwd_updated {
-  padding-top: 15px;
-  display: none;
-}
-
-/* Register modal */
-#modal-register {
-  /*display: none;*/
-  padding-bottom: 15px;
-}
 #container-register {
   margin-top: 32px;
 }
@@ -159,7 +151,7 @@ body {
 #modal-register-succ {
   text-align: center;
   padding: 64px;
-  display: none;
+
 }
 
 #modal-register-succ .divider {
@@ -168,4 +160,17 @@ body {
 
 #modal-register-succ h1 {
   color: #293D73;
+}
+
+/* Keyframes animations */
+
+@keyframes modal-appear {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
 }

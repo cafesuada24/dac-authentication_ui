@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/main.css">
+  <script src="./scripts/main.js" defer></script>
   <title>Authentication</title>
 </head>
 <body>
@@ -25,12 +26,12 @@
         </label>
         <label>Password
           <input class="modal-input" name="password" placeholder="Password" required>
-          <a class="modal-link" href="#">Forgot password?</a>
+          <a class="modal-link" onclick="sw('modal-login', 'modal-forgot_pwd')" href="#">Forgot password?</a>
         </label>
         <label><input class="modal-checkbox" name="remember-user" type="checkbox" value="checked"> <span class="modal-checkbox_text">Remember me</span></label>
       </form>
       <button form="login-form" class="modal-button">login</button>
-      <p class="modal-desc">Not a member? <a href="#" class="modal-link">Sign up now</a></p>
+      <p class="modal-desc">Not a member? <a href="#" onclick="sw('modal-login', 'modal-register')" class="modal-link">Sign up now</a></p>
     </div>
   </div>
 
@@ -40,12 +41,12 @@
     <p class="modal-desc">No worries!</p>
     <p class="modal-error_text modal-desc" id="forgot-error">We couldn't recognize the email</p>
     <div class="modal-container" id="container-forgot">
-      <form method="post" action="#" class="modal-form" id="forgot-form">
+      <form method="post" action="javascript:void(0)" onsubmit="sw('modal-forgot_pwd', 'modal-mail_sent')" class="modal-form" id="forgot-form">
         <p class="modal-desc">Enter your email and we will send you a reset</p>
         <input type="email" placeholder="@email" name="email" class="modal-input" required>
       </form>
       <button class="modal-button" form="forgot-form">send request</button>
-      <p class="modal-desc">Back to <a class="modal-link" href="#">Sign in</a> page</p>
+      <p class="modal-desc">Back to <a class="modal-link" onclick="sw('modal-forgot_pwd', 'modal-login')" href="#">Sign in</a> page</p>
     </div>
   </div>
 
@@ -89,22 +90,22 @@
     <p class="modal-error_text modal-desc" id="regist-error-pwd_mmc">Mismatching password!</p>
     <p class="modal-error_text modal-desc" id="regist-error-mail">We couldn't recognise the email!</p>
     <div class="modal-container" id="container-register">
-      <form method="post" action="#" class="modal-form">
+      <form method="post" id="form-register" onsubmit="sw('modal-register', 'modal-register-succ')" action="javascript:void(0)" class="modal-form">
         <label >Your email
           <input class="modal-input" type="email" name="email" placeholder="@email" required>
         </label>
         <label >Your password
-          <input class="modal-input" type="email" name="password" placeholder="Password" required>
+          <input class="modal-input" type="password" name="password" placeholder="Password" required>
           <span style="opacity: 0.5; font-size: 10px"><i>Must be at least 8 characters with one uppercase, one lowercase, one number and special character</i></span>
         </label>
         <label >Confirm password
-          <input class="modal-input" type="email" name="password-cfm" placeholder="Confirm password" required>
+          <input class="modal-input" type="password" name="password-cfm" placeholder="Confirm password" required>
         </label>
       </form>
-      <button class="modal-button">Sign up</button>
-      <p class="modal-desc">Already have an account? <a href="#" class="modal-link">Sign in now</a></p>
+      <button form="form-register" class="modal-button">Sign up</button>
+      <p class="modal-desc">Already have an account? <a href="#" onclick="sw('modal-register', 'modal-login')" class="modal-link">Sign in now</a></p>
     </div>
-  </div>\
+  </div>
 
   <!-- Register successfully modal-->
   <div class="modal" id="modal-register-succ">
@@ -112,7 +113,7 @@
     <hr class="divider">
     <h1 class="modal-heading">success</h1>
     <div class="modal-container">
-      <button class="modal-button">login</button>
+      <button onclick="sw('modal-register-succ', 'modal-login')" class="modal-button">login</button>
     </div>
   </div>
 </body>
